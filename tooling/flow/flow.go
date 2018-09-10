@@ -63,8 +63,8 @@ type spannotype struct {
 // ByCtx sortable spans
 type ByCtx []*spannotype
 
-func (a ByCtx) Len() int             { return len(a) }
-func (a ByCtx) Swap(i, j int)        { a[i], a[j] = a[j], a[i] }
+func (a ByCtx) Len() int      { return len(a) }
+func (a ByCtx) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 func (a ByCtx) Less(i, j int) bool { // sort by span first then time
 	if a[i].Ctx == a[j].Ctx {
 		return a[i].Timestamp < a[j].Timestamp
